@@ -1,10 +1,10 @@
    <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?php echo BASE_URL?>views/js/jquery.js"></script>
-    <script src="<?php echo BASE_URL?>views/js/bootstrap.min.js"></script>
+    <script src="<?php echo BASE_URL?>/views/js/jquery.js"></script>
+    <script src="<?php echo BASE_URL?>/views/js/bootstrap.min.js"></script>
     <?php if($u->isAdmin()){?>
-    <script src="<?php echo BASE_URL?>application/plugins/tinyeditor/tiny.editor.packed.js"></script>
+    <script src="<?php echo BASE_URL?>/application/plugins/tinyeditor/tiny.editor.packed.js"></script>
     <script>
 			var editor = new TINY.editor.edit('editor', {
 				id: 'tinyeditor',

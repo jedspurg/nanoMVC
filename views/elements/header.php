@@ -9,16 +9,16 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="<?php echo BASE_URL?>views/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo BASE_URL?>/views/css/bootstrap.min.css" rel="stylesheet">
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
     </style>
     <?php if($u->isAdmin()){?>
-    <link rel="stylesheet" href="<?php echo BASE_URL?>application/plugins/tinyeditor/tinyeditor.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL?>/application/plugins/tinyeditor/tinyeditor.css">
     <?php }?>
-    <link href="<?php echo BASE_URL?>views/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="<?php echo BASE_URL?>/views/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -47,8 +47,8 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="<?php echo BASE_URL?>">Home</a></li>
-              <li><a href="<?php echo BASE_URL?>blog/">Blog</a></li>
-              <li><a href="<?php echo BASE_URL?>members/">Members</a></li>
+              <li><a href="<?php echo BASE_URL?>/blog/">Blog</a></li>
+              <li><a href="<?php echo BASE_URL?>/members/">Members</a></li>
               
             </ul>
             
@@ -58,17 +58,17 @@
                 <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown"><?php echo $u->getUserName()?> <b class="caret"></b></a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
                 	<?php if($u->isAdmin()){?>
-                  <li><a href="<?php echo BASE_URL?>manageposts/">Manage Blog Posts</a></li>
+                  <li><a href="<?php echo BASE_URL?>/manageposts/">Manage Blog Posts</a></li>
                   <?php }?>
-									 <li><a href="<?php echo BASE_URL?>login/logout/">Log Out</a></li>
+									 <li><a href="<?php echo BASE_URL?>/login/logout/">Log Out</a></li>
                 </ul>
               </li>
             </ul>
             <?php }else{?>
      
             <ul class="nav pull-right">
-            	<li><a href="<?php echo BASE_URL?>login/">Login</a></li>
-              <li><a href="<?php echo BASE_URL?>register/">Register</a></li>
+            	<li><a href="<?php echo BASE_URL?>/login/">Login</a></li>
+              <li><a href="<?php echo BASE_URL?>/register/">Register</a></li>
             </ul>
             
             <?php }?>

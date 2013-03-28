@@ -20,7 +20,7 @@ class LoginController extends Controller{
 					$view = $_SESSION['redirect'];
 					unset($_SESSION['redirect']);
 					
-					header('Location: '.BASE_URL.$view);
+					header('Location: '.BASE_URL.'/'.$view);
 					
 				}else{
 				

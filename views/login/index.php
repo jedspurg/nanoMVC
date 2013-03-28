@@ -19,7 +19,7 @@ if($_SESSION['error']){
   
   <div class="row">
       <div class="span8">
-        <form action="<?php echo BASE_URL?>login/<?php echo $task?>" method="post" >
+        <form action="<?php echo BASE_URL?>/login/<?php echo $task?>" method="post" >
 
           
           <label>Email</label>
@@ -29,7 +29,7 @@ if($_SESSION['error']){
           <input type="password" class="span6" name="user_password">
 
           <div class="clearfix"></div>
-          <button id="submit" type="submit" class="btn btn-primary" >Login</button> or <a href="<?php echo BASE_URL.'register'?>" class="btn">Register</a>
+          <button id="submit" type="submit" class="btn btn-primary" >Login</button> or <a href="<?php echo BASE_URL.'/register'?>" class="btn">Register</a>
         </form>
 
         

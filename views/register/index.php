@@ -20,7 +20,7 @@
   <?php }?>
   <div class="row">
       <div class="span8">
-        <form action="<?php echo BASE_URL?>register/process" method="post" >
+        <form action="<?php echo BASE_URL?>/register/process" method="post" >
           <label>First Name</label>
           <input type="text" class="span6" name="user_first_name" value="">
           
