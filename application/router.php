@@ -16,21 +16,22 @@ spl_autoload_register('autoloader');
 
 
 //grab the path info and break it apart into separate variables
-$paths= explode('/', $_SERVER['PATH_INFO']);
+$path_info = (isset($_SERVER['PATH_INFO'])) ? $_SERVER['PATH_INFO'] : @getenv('PATH_INFO');
+$path = explode('/', $path_info);
 
 //check the view, if empty set to default view
-if($paths[1] == ''){
+if($path[1] == ''){
 	$view = DEFAULT_VIEW; 
 }else{
-	$view = $paths[1];
+	$view = $path[1];
 }
 //check to see if a method is being called and assign the $method variable
-$method = $paths[2];
+$method = $path[2];
 
 //check to see if any parameters are passed and assign the $parameters array
-for($i=3;$i < count($paths);$i++){
+for($i=3;$i < count($path);$i++){
 	
-	$parameters[] = $paths[$i];
+	$parameters[] = $path[$i];
 }
 
 
