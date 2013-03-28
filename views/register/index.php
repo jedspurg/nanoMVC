@@ -1,5 +1,4 @@
 <?php include('views/elements/header.php');?>
-
 <div class="container">
 	<div class="page-header">
    <h1>Register</h1>
