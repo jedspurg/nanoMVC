@@ -5,7 +5,7 @@
   </div>
 	<?php echo $content;?>
   <br/>
-  category: <?php echo Category::getCategoryValue($categoryID);?>
+  category: <?php echo Category::getValue($categoryID);?>
   <br/>
   <?php echo date('F j, Y', strtotime($date))?>
 </div>

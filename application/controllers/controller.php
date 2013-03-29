@@ -1,14 +1,20 @@
 <?php
 class Controller {
 	
-  public $view;
 	public $data = array();
+	protected $view;
 	protected $access;
 	protected $include_header_footer = true;
 
 	function __construct($view, $method = null, $parameters = null){
- 		//instantiate the view class
-		$this->view = new View();
+		//load models if class variables 
+		$class_vars = get_class_vars(get_class($this));
+		foreach ($class_vars as $name => $value) {
+			$class = ucfirst($name);
+	    if (class_exists($class)){
+	    	$this->$name = new $class();
+	    }
+		}
 		//now check the access
 		//first instantiate a user to see if the logged in user is an admin
 		$u = new User();

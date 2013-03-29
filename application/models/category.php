@@ -1,38 +1,13 @@
 <?php
 class Category extends Model{
 	
-	
-		
-	public function getAllCategories(){
-	
-		
-		$sql =  'SELECT * FROM categories';
-		
+	static function getValue($id){	
+    $category = new Category();
+		$sql =  'SELECT * FROM categories WHERE id = ?';
 		// perform query
-		$results = $this->db->execute($sql);
-		
-		while ($row=$results->fetchrow()) {
-			$categories[] = $row;
-		}
-
-		return $categories;
-	
-	}
-	
-	static function getCategoryValue($catID){
-		$cat = new Category();
-		
-		$sql =  'SELECT * FROM categories WHERE categoryID = ?';
-		
-		// perform query
-		$results = $cat->db->getrow($sql, array($catID));
-		
+		$results = $category->db->getrow($sql, array($id));
 		$cat = $results['name'];
-	
 		return $cat;
-		
 	}
-	
-	
 	
 }

@@ -1,17 +1,15 @@
 <?php
 class BlogController extends Controller{
 	
-	public $postObject;
+	public $post;
 		
-  public function post($pID){
-    $this->postObject = new Post();
-  	$post = $this->postObject->getPost($pID);	    
+  public function post($id){
+  	$post = $this->post->getOne($id);	    
   	$this->set('post',$post);
   }
 	
 	public function index(){
-		$this->postObject = new Post();
-		$posts = $this->postObject->getAllPosts();
+		$posts = $this->post->getAll();
 		$this->set('title', 'The Default Blog View');
 		$this->set('posts',$posts);
 	}

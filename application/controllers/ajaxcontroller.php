@@ -1,9 +1,9 @@
 <?php
 class AjaxController extends Controller {
 	
-	protected $postObject;
-	protected $userObject;
-	protected $categoryObject;
+	protected $post;
+	protected $user;
+	protected $category;
 	//overide the default behavior to include HTML header and footer
 	protected $include_header_footer = false;
 	
@@ -12,8 +12,7 @@ class AjaxController extends Controller {
 	}
 	
 	public function get_post_content(){
-		$this->postObject = new Post();
-		$post = $this->postObject->getPost($_GET['pID']);	
+		$post = $this->post->getOne($_GET['id']);	
 		$this->set('response', $post['content']);
 	}
 	
