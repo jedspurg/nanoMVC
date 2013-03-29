@@ -4,6 +4,8 @@ class AjaxController extends Controller {
 	protected $postObject;
 	protected $userObject;
 	protected $categoryObject;
+	//overide the default behavior to include HTML header and footer
+	protected $include_header_footer = false;
 	
 	public function index(){
     $this->set('response', "Invalid request!");

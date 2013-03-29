@@ -1,8 +1,4 @@
-<?php
-include('views/elements/header.php');
-extract($post);
-?>
-
+<?php extract($post);?>
 <div class="container">
 	<div class="page-header">
 		<h1><?php echo $title;?></h1>
@@ -12,7 +8,4 @@ extract($post);
   category: <?php echo Category::getCategoryValue($categoryID);?>
   <br/>
   <?php echo date('F j, Y', strtotime($date))?>
-
 </div>
-
-<?php include('views/elements/footer.php');?>

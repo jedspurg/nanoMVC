@@ -1,10 +1,9 @@
-<?php include('views/elements/header.php');
-
+<?php 
 if($_SESSION['error']){
-	
 	$error = $_SESSION['error'];
 	unset($_SESSION['error']);
-}?>
+}
+?>
 <div class="container">
 	<div class="page-header">
    <h1>Login</h1>
@@ -38,5 +37,3 @@ if($_SESSION['error']){
     
     
 </div>
-<?php include('views/elements/footer.php');?>
-

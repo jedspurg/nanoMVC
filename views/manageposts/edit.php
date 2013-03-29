@@ -1,5 +1,3 @@
-<?php include('views/elements/header.php');?>
-
 <div class="container">
 	<div class="page-header">
    <h1> the Add Post View </h1>
@@ -26,6 +24,7 @@
      			<label>Content</label>
           <textarea id="tinyeditor" name="post_content" style="width:556px;height: 200px"><?php echo $content?></textarea>
     			<br/>
+          <input type="hidden" name="uID" value="<?php echo $u->getUserID()?>"/>
           <input type="hidden" name="pID" value="<?php echo $pID?>"/>
           <button id="submit" type="submit" class="btn btn-primary" >Submit</button>
         </form>
@@ -34,5 +33,3 @@
       </div>
     </div>
 </div>
-<?php include('views/elements/footer.php');?>
-

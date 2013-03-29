@@ -1,5 +1,3 @@
-<?php include('views/elements/header.php');?>
-
 <div class="container">
 	<div class="page-header">
 		<h1><?php echo $title;?></h1>
@@ -11,7 +9,5 @@
 			<a class="btn post-loader" href="<?php echo BASE_URL?>/ajax/get_post_content/?pID=<?php echo $p['pID'];?>">View entire post</a>
     </div>
     category: <?php echo Category::getCategoryValue($p['categoryID']);?><br/>
-<?php }?>
+	<?php }?>
 </div>
-
-<?php include('views/elements/footer.php');?>
