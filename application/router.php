@@ -1,6 +1,8 @@
 <?php
 require_once('application/config.php');
+//start our session globally
 session_start();
+//autoload any class file found in the app directory
 function autoloader($class){	
 	$class = strtolower($class) . '.php';
 	// try to include recursively the class file
