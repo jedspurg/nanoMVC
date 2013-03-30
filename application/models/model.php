@@ -25,19 +25,28 @@ class Model {
 	}
 
 	public function update($data){
-
+		$keys = array_keys($data);
+		$values = array_values($data);
+		foreach($keys as $col){
+			$columns[] = $col.'=?';
+		}
+		array_pop($columns);
+		$sql='UPDATE '.$this->table.' SET '.implode(",", $columns).' WHERE id=?'; 
+		if($this->db->execute($sql,$values)){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
   public function getOne($id){
   	$sql =  'SELECT * FROM '.$this->table.' WHERE id = ?';
-		// perform query
 		$result = $this->db->getrow($sql, array($id));
 		return $result;
   }
 
   public function getAll(){
 		$sql =  'SELECT * FROM '.$this->table;
-		// perform query
 		$results = $this->db->execute($sql);
 		while ($row=$results->fetchrow()) {
 			$items[] = $row;

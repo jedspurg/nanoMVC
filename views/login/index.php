@@ -18,7 +18,7 @@ if($_SESSION['error']){
   
   <div class="row">
       <div class="span8">
-        <form action="<?php echo BASE_URL?>/login/<?php echo $task?>" method="post" >
+        <form action="<?php echo BASE_URL?>/login/do_login/" method="post" >
 
           
           <label>Email</label>
