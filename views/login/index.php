@@ -22,10 +22,10 @@ if($_SESSION['error']){
 
           
           <label>Email</label>
-          <input type="email" class="span6" name="user_email">
+          <input type="email" class="span6" name="email">
           
           <label>Password</label>
-          <input type="password" class="span6" name="user_password">
+          <input type="password" class="span6" name="password">
 
           <div class="clearfix"></div>
           <button id="submit" type="submit" class="btn btn-primary" >Login</button> or <a href="<?php echo BASE_URL.'/register'?>" class="btn">Register</a>

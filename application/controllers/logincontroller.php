@@ -5,9 +5,9 @@ class LoginController extends Controller{
    
 	public function do_login(){
 
-		$password = md5(sha1($_POST['user_password']));
-		if($this->user->checkUser($_POST['user_email'],$password)){
-			$userInfo = $this->user->getUserFromEmail($_POST['user_email']);
+		$password = md5(sha1($_POST['password']));
+		if($this->user->checkUser($_POST['email'],$password)){
+			$userInfo = $this->user->getUserFromEmail($_POST['email']);
 			$_SESSION['uID'] = $userInfo['id'];
 			if(strlen($_SESSION['redirect']) > 0){
 				$view = $_SESSION['redirect'];

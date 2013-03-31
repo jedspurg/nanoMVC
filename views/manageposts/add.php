@@ -12,19 +12,19 @@
       <div class="span8">
         <form action="<?php echo BASE_URL?>/manageposts/save" method="post" onsubmit="editor.post()">
           <label>Title</label>
-          <input type="text" class="span6" name="post_title" value="">
+          <input type="text" class="span6" name="title" value="">
           <label>Date</label>
-          <input type="text" class="span2" name="post_date" value="">
           <label>Category</label>
-          <select name="category">
+          <select name="categoryID">
           <?php foreach($categories as $cat){?>
           <option value="<?php echo $cat['categoryID']?>"><?php echo $cat['name']?></option>
           <?php }?>
           </select>
      			<label>Content</label>
-          <textarea id="tinyeditor" name="post_content" style="width:556px;height: 200px"></textarea>
+          <textarea id="tinyeditor" name="content" style="width:556px;height: 200px"></textarea>
     			<br/>
           <input type="hidden" name="uID" value="<?php echo $u->getUserID()?>"/>
+          <input type="hidden" name="date" value="<?php date()?>">
           <button id="submit" type="submit" class="btn btn-primary" >Submit</button>
         </form>
       </div>

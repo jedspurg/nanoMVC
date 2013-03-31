@@ -8,5 +8,5 @@ define('DB_USER', 'root');
 define('DB_PASS', 'root');
 define('DB_NAME', 'nanoMVC');
 
-//suppress error - turn on in development
+//error reporting
 error_reporting(0);

@@ -1,5 +1,6 @@
 <?php
 require_once('application/libraries/adodb5/adodb.inc.php');
+require_once('application/libraries/inflector.php');
 class Model {
 	
 	protected $db;
@@ -13,15 +14,33 @@ class Model {
 		} catch (exception $e){
 			echo 'Connection failed: ' . $e->getMessage();
 		}
-		$this->table = strtolower(get_class($this)).'s';
+		$this->table = Inflector::pluralize(strtolower(get_class($this)));
 	}
 
 	public function create($data){
-
+		$keys = array_keys($data);
+		$values = array_values($data);
+		foreach($keys as $col){
+			$columns[] = $col;
+		}
+		for($i=0;$i<count($values);$i++){
+			$valHolders[] = '?';
+		}
+		$sql='INSERT INTO '.$this->table.' ('.implode(",", $columns).') VALUES ('.implode(",", $valHolders).')'; 
+		if($this->db->execute($sql,$values)){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	public function delete($id){
-
+		$sql='DELETE FROM '.$this->table.' WHERE id=?'; 
+		if($this->db->execute($sql,array($id))){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	public function update($data){
