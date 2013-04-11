@@ -29,15 +29,14 @@ class Controller {
 			//run any task methods
 			if($method){
 				$this->runTask($method, $parameters);
+			}
+			
+			//render the view
+			if(file_exists('views/'.strtolower($view).'/'.strtolower($method).'.php')){
+				$this->view->load($view, $method, $this->data);
 			}else{
 				$this->index();
-				$method = 'index';
-			}
-			//render the view if file exists otherwise just process the method and go to the index
-			if(file_exists('views/'.strtolower($view).'/'.strtolower($method).'.php')){
-				$this->view->load($view, $method, $this->data, $this->include_header_footer);
-			}else{
-				$this->view->load($view, 'index', $this->data, $this->include_header_footer);
+				$this->view->load($view, 'index', $this->data);
 			}
 		}
 	}
